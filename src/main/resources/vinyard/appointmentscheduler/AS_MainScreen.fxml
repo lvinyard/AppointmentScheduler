@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Scene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Scene xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+    <AnchorPane prefHeight="617.0" prefWidth="1075.0">
+      <children>
+         <TableView layoutX="23.0" layoutY="70.0" prefHeight="200.0" prefWidth="1035.0">
+           <columns>
+             <TableColumn prefWidth="52.0" text="Appt. ID" />
+             <TableColumn prefWidth="148.0" text="Title" />
+               <TableColumn prefWidth="141.0" text="Description" />
+               <TableColumn prefWidth="114.0" text="Location" />
+               <TableColumn prefWidth="89.0" text="Contact" />
+               <TableColumn text="Type" />
+               <TableColumn prefWidth="118.0" text="Start Date and Time" />
+               <TableColumn prefWidth="132.0" text="End Date and Time" />
+               <TableColumn prefWidth="94.0" text="Customer ID" />
+               <TableColumn prefWidth="66.0" text="User_ID" />
+           </columns>
+         </TableView>
+         <TableView layoutX="23.0" layoutY="338.0" prefHeight="200.0" prefWidth="1037.0">
+            <columns>
+               <TableColumn prefWidth="75.0" text="Cust. ID" />
+               <TableColumn prefWidth="101.0" text="Name" />
+               <TableColumn prefWidth="182.0" text="Address" />
+               <TableColumn prefWidth="121.0" text="Postal Code" />
+               <TableColumn prefWidth="120.0" text="Phone" />
+               <TableColumn text="Create Date" />
+               <TableColumn prefWidth="78.0" text="Created By" />
+               <TableColumn prefWidth="88.0" text="Last Update" />
+               <TableColumn prefWidth="111.0" text="Last Updated By" />
+               <TableColumn text="Divison ID" />
+            </columns>
+         </TableView>
+         <Separator layoutX="-1.0" layoutY="303.0" prefHeight="12.0" prefWidth="1077.0" />
+         <Button layoutX="24.0" layoutY="274.0" mnemonicParsing="false" text="Add" />
+         <Button layoutX="74.0" layoutY="274.0" mnemonicParsing="false" text="Modify" />
+         <Button layoutX="24.0" layoutY="542.0" mnemonicParsing="false" text="Add" />
+         <Button layoutX="74.0" layoutY="542.0" mnemonicParsing="false" text="Modify" />
+         <Button layoutX="1007.0" layoutY="274.0" mnemonicParsing="false" text="Delete" />
+         <Button layoutX="1008.0" layoutY="542.0" mnemonicParsing="false" text="Delete" />
+         <Text layoutX="402.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointment Management System" textAlignment="CENTER" wrappingWidth="268.546875">
+            <font>
+               <Font size="16.0" />
+            </font>
+         </Text>
+         <Text layoutX="24.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointments" wrappingWidth="92.546875">
+            <font>
+               <Font size="13.0" />
+            </font>
+         </Text>
+         <Text layoutX="24.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customers" wrappingWidth="92.546875">
+            <font>
+               <Font size="13.0" />
+            </font>
+         </Text>
+         <Separator layoutX="410.0" layoutY="35.0" prefHeight="6.0" prefWidth="252.0" />
+         <RadioButton layoutX="897.0" layoutY="49.0" mnemonicParsing="false" text="Appointments by Month" />
+         <RadioButton layoutX="738.0" layoutY="49.0" mnemonicParsing="false" text="Appointments by Week" />
+         <Button layoutX="963.0" layoutY="584.0" mnemonicParsing="false" text="Reports" />
+         <Button layoutX="1033.0" layoutY="584.0" mnemonicParsing="false" text="Exit" />
+         <Separator layoutX="-2.0" layoutY="568.0" prefHeight="14.0" prefWidth="1080.0" />
+      </children></AnchorPane>
+</Scene>
