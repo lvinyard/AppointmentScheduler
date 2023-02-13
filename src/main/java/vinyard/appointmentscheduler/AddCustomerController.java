@@ -3,7 +3,7 @@ package vinyard.appointmentscheduler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class AddCustomerController {
     @FXML
     private Label welcomeText;
 
