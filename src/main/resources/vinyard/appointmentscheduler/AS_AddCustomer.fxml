@@ -52,14 +52,14 @@
                <Font size="16.0" />
             </font>
          </Text>
-         <ComboBox layoutX="153.0" layoutY="242.0" prefWidth="150.0" />
-         <ComboBox layoutX="153.0" layoutY="277.0" prefWidth="150.0" />
-         <TextField layoutX="154.0" layoutY="207.0" />
-         <TextField layoutX="154.0" layoutY="172.0" />
-         <TextField layoutX="154.0" layoutY="138.0" />
-         <TextField layoutX="154.0" layoutY="101.0" />
-         <TextField layoutX="154.0" layoutY="65.0" />
-         <Button layoutX="313.0" layoutY="323.0" mnemonicParsing="false" text="Save" />
-         <Button layoutX="253.0" layoutY="323.0" mnemonicParsing="false" text="Cancel" />
+         <ComboBox layoutX="153.0" layoutY="242.0" prefWidth="150.0" fx:id="CountryField"/>
+         <ComboBox layoutX="153.0" layoutY="277.0" prefWidth="150.0" fx:id="DivisionField"/>
+         <TextField layoutX="154.0" layoutY="207.0" fx:id="PhoneNumberField"/>
+         <TextField layoutX="154.0" layoutY="172.0" fx:id="PostalCodeField"/>
+         <TextField layoutX="154.0" layoutY="138.0" fx:id="AddressField"/>
+         <TextField layoutX="154.0" layoutY="101.0" fx:id="NameField"/>
+         <TextField layoutX="154.0" layoutY="65.0" fx:id="CustomerIdField"/>
+         <Button layoutX="313.0" layoutY="323.0" mnemonicParsing="false" text="Save" onAction="#SaveButton"/>
+         <Button layoutX="253.0" layoutY="323.0" mnemonicParsing="false" text="Cancel" onAction="#CancelButton"/>
       </children></AnchorPane>
 </Pane>

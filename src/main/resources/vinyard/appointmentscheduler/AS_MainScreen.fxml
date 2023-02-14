@@ -35,7 +35,7 @@
                <TableColumn prefWidth="182.0" text="Address" fx:id="ColumnAddress"/>
                <TableColumn prefWidth="121.0" text="Postal Code" fx:id="ColumnPostalCode"/>
                <TableColumn prefWidth="120.0" text="Phone" fx:id="ColumnPhone"/>
-               <TableColumn text="Create Date" />
+               <TableColumn text="Create Date" fx:id="ColumnCreatedDate"/>
                <TableColumn prefWidth="78.0" text="Created By" fx:id="ColumnCreated"/>
                <TableColumn prefWidth="88.0" text="Last Update" fx:id="ColumnLastUpdate"/>
                <TableColumn prefWidth="111.0" text="Last Updated By" fx:id="ColumnLastUpdateBy"/>
@@ -70,6 +70,6 @@
          <Button layoutX="963.0" layoutY="584.0" mnemonicParsing="false" text="Reports" onAction="#ReportsButton"/>
          <Button layoutX="1033.0" layoutY="584.0" mnemonicParsing="false" text="Exit" onAction="#ExitButton"/>
          <Separator layoutX="-2.0" layoutY="568.0" prefHeight="14.0" prefWidth="1080.0" />
-         <RadioButton layoutX="944.0" layoutY="49.0" mnemonicParsing="false" text="All Appointments" fx:id="RadioAll" onAction="#RadioAllButton"/>
+         <RadioButton selected="true" layoutX="944.0" layoutY="49.0" mnemonicParsing="false" text="All Appointments" fx:id="RadioAll" onAction="#RadioAllButton"/>
       </children></AnchorPane>
 </Pane>

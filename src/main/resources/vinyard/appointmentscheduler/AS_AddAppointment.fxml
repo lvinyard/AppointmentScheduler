@@ -53,21 +53,21 @@
                <Font size="16.0" />
             </font>
          </Text>
-         <ComboBox layoutX="164.0" layoutY="207.0" prefWidth="150.0" />
-         <ComboBox layoutX="361.0" layoutY="278.0" prefHeight="25.0" prefWidth="117.0" />
-         <TextField layoutX="165.0" layoutY="242.0" />
-         <TextField layoutX="165.0" layoutY="172.0" />
-         <TextField layoutX="165.0" layoutY="138.0" />
-         <TextField layoutX="165.0" layoutY="101.0" />
-         <TextField layoutX="165.0" layoutY="65.0" />
-         <Button layoutX="448.0" layoutY="429.0" mnemonicParsing="false" text="Save" />
-         <Button layoutX="388.0" layoutY="429.0" mnemonicParsing="false" text="Cancel" />
+         <ComboBox layoutX="164.0" layoutY="207.0" prefWidth="150.0" fx:id="ContactIdField"/>
+         <ComboBox layoutX="361.0" layoutY="278.0" prefHeight="25.0" prefWidth="117.0" fx:id="StartTime"/>
+         <TextField layoutX="165.0" layoutY="242.0" fx:id="TypeField"/>
+         <TextField layoutX="165.0" layoutY="172.0" fx:id="LocationField"/>
+         <TextField layoutX="165.0" layoutY="138.0" fx:id="DescField"/>
+         <TextField layoutX="165.0" layoutY="101.0" fx:id="TitleField"/>
+         <TextField layoutX="165.0" layoutY="65.0" fx:id="AppointmentIdField"/>
+         <Button layoutX="448.0" layoutY="429.0" mnemonicParsing="false" text="Save" onAction="#SaveButton"/>
+         <Button layoutX="388.0" layoutY="429.0" mnemonicParsing="false" text="Cancel" onAction="#CancelButton"/>
          <Text layoutX="14.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End Date and Time">
             <font>
                <Font size="16.0" />
             </font>
          </Text>
-         <ComboBox layoutX="360.0" layoutY="311.0" prefHeight="25.0" prefWidth="119.0" />
+         <ComboBox layoutX="360.0" layoutY="311.0" prefHeight="25.0" prefWidth="119.0" fx:id="EndTimeField"/>
          <Text layoutX="14.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer ID">
             <font>
                <Font size="16.0" />
@@ -78,9 +78,9 @@
                <Font size="16.0" />
             </font>
          </Text>
-         <TextField layoutX="165.0" layoutY="384.0" />
-         <TextField layoutX="165.0" layoutY="349.0" />
-         <DatePicker layoutX="164.0" layoutY="278.0" />
-         <DatePicker layoutX="164.0" layoutY="311.0" />
+         <TextField layoutX="165.0" layoutY="384.0" fx:id="UserIdField"/>
+         <TextField layoutX="165.0" layoutY="349.0" fx:id="CustomerIdField"/>
+         <DatePicker layoutX="164.0" layoutY="278.0" fx:id="StartDate"/>
+         <DatePicker layoutX="164.0" layoutY="311.0" fx:id="EndDate"/>
       </children></AnchorPane>
 </Pane>
