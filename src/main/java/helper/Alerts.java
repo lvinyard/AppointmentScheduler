@@ -10,7 +10,7 @@ public class Alerts {
      * This method handles presenting errors to the user
      * @param error
      */
-    public void errorLog(String error){
+    public static void errorLog(String error){
         Alert errorLog = new Alert(Alert.AlertType.ERROR);
         errorLog.setContentText(error);
         errorLog.show();

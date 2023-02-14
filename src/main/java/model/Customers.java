@@ -1,8 +1,6 @@
 package model;
 
-import java.sql.Date;
 import java.sql.Timestamp;
-import java.text.DateFormat;
 
 public class Customers {
     private int Customer_Id;
@@ -10,13 +8,13 @@ public class Customers {
     private String Address;
     private String PostalCode;
     private String Phone;
-    private Date Create_Date;
+    private Timestamp Create_Date;
     private String Created_By;
     private Timestamp Last_Update;
     private String Updated_By;
     private int Division_Id;
 
-    public Customers(int customer_Id, String customer_Name, String address, String postalCode, String phone, Date create_Date, String created_By, Timestamp last_Update, String updated_By, int division_Id){
+    public Customers(int customer_Id, String customer_Name, String address, String postalCode, String phone, Timestamp create_Date, String created_By, Timestamp last_Update, String updated_By, int division_Id){
         this.Customer_Id = customer_Id;
         this.Customer_Name = customer_Name;
         this.Address = address;
@@ -77,11 +75,11 @@ public class Customers {
         Created_By = created_By;
     }
 
-    public Date getCreate_Date() {
+    public Timestamp getCreate_Date() {
         return Create_Date;
     }
 
-    public void setCreate_Date(Date create_Date) {
+    public void setCreate_Date(Timestamp create_Date) {
         Create_Date = create_Date;
     }
 

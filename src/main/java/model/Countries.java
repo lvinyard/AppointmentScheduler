@@ -6,12 +6,12 @@ import java.text.DateFormat;
 public class Countries {
     private int Country_Id;
     private String Country;
-    private DateFormat Create_Date;
+    private Timestamp Create_Date;
     private String Created_By;
     private Timestamp Last_Update;
     private String Updated_By;
 
-    public void Countries(int country_Id, String country, DateFormat create_Date, String created_By, Timestamp last_Update, String updated_By){
+    public Countries(int country_Id, String country, Timestamp create_Date, String created_By, Timestamp last_Update, String updated_By){
         this.Country_Id = country_Id;
         this.Country = country;
         this.Create_Date = create_Date;
@@ -36,11 +36,11 @@ public class Countries {
         Country = country;
     }
 
-    public DateFormat getCreate_Date() {
+    public Timestamp getCreate_Date() {
         return Create_Date;
     }
 
-    public void setCreate_Date(DateFormat create_Date) {
+    public void setCreate_Date(Timestamp create_Date) {
         Create_Date = create_Date;
     }
 

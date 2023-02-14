@@ -9,6 +9,8 @@ import java.sql.SQLException;
 
 public class UsersQuery {
 
+    public static Users loggedonUser;
+
     public static Users getUser(String userName) throws SQLException, Exception{
         String sqlStatement = "SELECT * FROM users WHERE User_Name = '" + userName + "'";
         Query.makeQuery(sqlStatement);
@@ -18,23 +20,21 @@ public class UsersQuery {
             int resuserid = result.getInt("User_ID");
             String resuserName = result.getString("User_Name");
             String respassword = result.getString("Password");
-            Users userResult = new Users(resuserid, resuserName, respassword);
+            Users userResult = new Users(resuserid, resuserName);
             return userResult;
         }
         return null;
     }
-    public static ObservableList<Users> getAllUsers() throws SQLException, Exception{
-        ObservableList<Users> allUsers = FXCollections.observableArrayList();
-        String sqlStatement = "Select * from users";
+    public static void logOnUser(String username, String password) throws SQLException, Exception{
+        String sqlStatement = "Select * from users where User_Name = '" + username + "' and Password = '" + password + "'";
         Query.makeQuery(sqlStatement);
         ResultSet result = Query.getResult();
-        while(result.next()){
-            int resuserid = result.getInt("User_ID");
-            String resuserName = result.getString("User_Name");
-            String respassword = result.getString("Password");
-            Users userResult = new Users(resuserid, resuserName, respassword);
-            allUsers.add(userResult);
-        }
-        return allUsers;
+
+        result.next();
+        int resUserId = result.getInt("User_ID");
+        String resUserName = result.getString("User_Name");
+        Users loggedUser = new Users(resUserId, resUserName);
+
+        loggedonUser = loggedUser;
     }
 }

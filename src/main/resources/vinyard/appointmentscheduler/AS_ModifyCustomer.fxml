@@ -58,7 +58,7 @@
          <TextField layoutX="154.0" layoutY="172.0" fx:id="PostalCodeField"/>
          <TextField layoutX="154.0" layoutY="138.0" fx:id="AddressField"/>
          <TextField layoutX="154.0" layoutY="101.0" fx:id="NameField"/>
-         <TextField layoutX="154.0" layoutY="65.0" fx:id="CustomerIdField"/>
+         <TextField layoutX="154.0" layoutY="65.0" fx:id="CustomerIdField" editable="false" mouseTransparent="true" focusTraversable="false"/>
          <Button layoutX="313.0" layoutY="323.0" mnemonicParsing="false" text="Save" onAction="#SaveButton"/>
          <Button layoutX="253.0" layoutY="323.0" mnemonicParsing="false" text="Cancel" onAction="#CancelButton"/>
       </children></AnchorPane>

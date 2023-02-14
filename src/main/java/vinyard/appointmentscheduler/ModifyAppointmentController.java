@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import model.Appointments;
+import model.Customers;
 
 import java.io.IOException;
 
@@ -22,12 +24,11 @@ public class ModifyAppointmentController {
     public TextField TypeField;
     public ComboBox StartTime;
     public ComboBox ContactIdField;
-    @FXML
-    private Label welcomeText;
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    private static Appointments modifyAppointment = null;
+
+    public static void getModifyAppointment(Appointments appointment){
+        modifyAppointment = appointment;
     }
 
     public void CancelButton(ActionEvent actionEvent) throws IOException {

@@ -6,16 +6,18 @@ import java.text.DateFormat;
 public class Divisions {
     private int Division_Id;
     private String Division;
-    private DateFormat Create_Date;
+    private Timestamp Create_Date;
+    private String Created_By;
     private Timestamp Last_Update;
     private String Updated_By;
     private int Country_Id;
 
-    public void Divisions(int division_Id, String division, DateFormat create_Date, Timestamp last_Update, String updated_By, int country_Id){
+    public Divisions(int division_Id, String division, Timestamp create_Date, String created_By, Timestamp last_Update, String updated_By, int country_Id){
 
         this.Division_Id = division_Id;
         this.Division = division;
         this.Create_Date = create_Date;
+        this.Created_By = created_By;
         this.Last_Update = last_Update;
         this.Updated_By = updated_By;
         this.Country_Id = country_Id;
@@ -38,11 +40,11 @@ public class Divisions {
         Division = division;
     }
 
-    public DateFormat getCreate_Date() {
+    public Timestamp getCreate_Date() {
         return Create_Date;
     }
 
-    public void setCreate_Date(DateFormat create_Date) {
+    public void setCreate_Date(Timestamp create_Date) {
         Create_Date = create_Date;
     }
 
@@ -68,5 +70,13 @@ public class Divisions {
 
     public void setCountry_Id(int country_Id) {
         Country_Id = country_Id;
+    }
+
+    public String getCreated_By() {
+        return Created_By;
+    }
+
+    public void setCreated_By(String created_By) {
+        Created_By = created_By;
     }
 }

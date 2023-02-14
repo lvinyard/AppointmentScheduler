@@ -102,17 +102,33 @@ public class MainScreenController implements Initializable {
     }
 
     public void DeleteCustomerButton(ActionEvent actionEvent) {
+        Customers deleteCustomer = CustomerTable.getSelectionModel().getSelectedItem();
+        if(deleteCustomer != null){
+
+        }else{
+            helper.Alerts.errorLog("No Customer is selected");
+        }
     }
 
     public void ModifyCustomerButton(ActionEvent actionEvent) throws IOException {
 
-        //Change Scene to Modify Customer Screen
-        Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/vinyard/appointmentscheduler/AS_ModifyCustomer.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 361, 354);
-        stage.setTitle("Modify Product Form");
-        stage.setScene(scene);
-        stage.show();
+        Customers modifyCustomer = CustomerTable.getSelectionModel().getSelectedItem();
+        if(modifyCustomer != null){
+
+            //Pass Customer to Modify Customer Controller
+            ModifyCustomerController.getModifyCustomer(modifyCustomer);
+
+            //Change Scene to Modify Customer Screen
+            Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/vinyard/appointmentscheduler/AS_ModifyCustomer.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 361, 354);
+            stage.setTitle("Modify Product Form");
+            stage.setScene(scene);
+            stage.show();
+
+        }else{
+            helper.Alerts.errorLog("No Customer is selected");
+        }
     }
     public void AddCustomerButton(ActionEvent actionEvent) throws IOException {
 
@@ -125,16 +141,33 @@ public class MainScreenController implements Initializable {
         stage.show();
     }
     public void DeleteAppointmentButton(ActionEvent actionEvent) {
+
+        Appointments deleteAppointment = AppointmentTable.getSelectionModel().getSelectedItem();
+        if(deleteAppointment != null){
+
+        }else{
+            helper.Alerts.errorLog("No Appointment is selected");
+        }
     }
     public void ModifyAppointmentButton(ActionEvent actionEvent) throws IOException {
 
-        //Change Scene to Modify Appointment Screen
-        Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/vinyard/appointmentscheduler/AS_ModifyAppointment.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 504, 471);
-        stage.setTitle("Modify Appointment");
-        stage.setScene(scene);
-        stage.show();
+        Appointments modifyAppointment = AppointmentTable.getSelectionModel().getSelectedItem();
+        if(modifyAppointment != null){
+
+            //Pass Customer to Modify Customer Controller
+            ModifyAppointmentController.getModifyAppointment(modifyAppointment);
+
+            //Change Scene to Modify Appointment Screen
+            Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/vinyard/appointmentscheduler/AS_ModifyAppointment.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 504, 471);
+            stage.setTitle("Modify Appointment");
+            stage.setScene(scene);
+            stage.show();
+
+        }else{
+            helper.Alerts.errorLog("No Appointment is selected");
+        }
     }
     public void AddAppointmentButton(ActionEvent actionEvent) throws IOException {
 
@@ -161,6 +194,8 @@ public class MainScreenController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
         //Get Radio Button Filter
         //Create toggle group for Radio Buttons
         ToggleGroup group = new ToggleGroup();
