@@ -19,14 +19,13 @@ public class UsersQuery {
         while(result.next()){
             int resuserid = result.getInt("User_ID");
             String resuserName = result.getString("User_Name");
-            String respassword = result.getString("Password");
             Users userResult = new Users(resuserid, resuserName);
             return userResult;
         }
         return null;
     }
     public static void logOnUser(String username, String password) throws SQLException, Exception{
-        String sqlStatement = "Select * from users where User_Name = '" + username + "' and Password = '" + password + "'";
+        String sqlStatement = "Select * from users where User_Name = '" + username + "' and BINARY Password = '" + password + "'";
         Query.makeQuery(sqlStatement);
         ResultSet result = Query.getResult();
 
