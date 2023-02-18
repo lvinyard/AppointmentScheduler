@@ -3,12 +3,13 @@ package helper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.Appointments;
-import model.Customers;
 
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 public class AppointmentsQuery {
 
@@ -49,5 +50,30 @@ public class AppointmentsQuery {
         }
         return allAppointments;
     }
+
+    public static LocalDateTime UTCtoLocalTime(Timestamp ts) {
+        LocalDateTime ldt = ts.toLocalDateTime();
+        ZonedDateTime zdt = ldt.atZone(ZoneId.of(ZoneId.systemDefault().toString()));
+        ZonedDateTime utczdt = zdt.withZoneSameInstant(ZoneId.of("UTC"));
+        LocalDateTime ldtIn = utczdt.toLocalDateTime();
+
+        ZonedDateTime zdtOut = ldtIn.atZone(ZoneId.of("UTC"));
+        ZonedDateTime zdtOutToLocalTZ = zdtOut.withZoneSameInstant(ZoneId.of(ZoneId.systemDefault().toString()));
+        LocalDateTime ldtOutFinal = zdt.toLocalDateTime();
+
+        System.out.println(ts);
+        System.out.println(ldt);
+        System.out.println(zdt);
+        System.out.println(utczdt);
+        System.out.println(ldtIn);
+        System.out.println(zdtOut);
+        System.out.println(zdtOutToLocalTZ);
+        System.out.println(ldtOutFinal);
+        System.out.println(ZoneId.systemDefault().toString());
+
+
+        return ldt;
+    }
+
 
 }

@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Scene?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
 <Pane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vinyard.appointmentscheduler.LoginController">
     <AnchorPane prefHeight="203.0" prefWidth="430.0">
       <children>
-         <Button layoutX="363.0" layoutY="164.0" mnemonicParsing="false" text="Login" onAction="#LoginButton"/>
-         <Button layoutX="304.0" layoutY="164.0" mnemonicParsing="false" text="Cancel" onAction="#CancelButton"/>
-         <TextField layoutX="169.0" layoutY="60.0" fx:id="UsernameField"/>
-         <PasswordField layoutX="169.0" layoutY="102.0" fx:id="PasswordField"/>
-         <Text layoutX="109.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:" />
-         <Text layoutX="113.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" />
-         <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location:" />
-         <Label layoutX="68.0" layoutY="14.0" prefHeight="17.0" prefWidth="59.0" text="USA" fx:id="LocationText"/>
-         <Label layoutX="73.0" layoutY="180.0" text="English" fx:id="LanguageText"/>
-         <Text layoutX="14.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Language:" />
+         <Button fx:id="loginButton" layoutX="349.0" layoutY="175.0" mnemonicParsing="false" onAction="#LoginButton" prefHeight="25.0" prefWidth="79.0" text="Login" />
+         <Button fx:id="cancelButton" layoutX="285.0" layoutY="175.0" mnemonicParsing="false" onAction="#CancelButton" text="Cancel" />
+         <TextField fx:id="UsernameField" layoutX="169.0" layoutY="60.0" />
+         <PasswordField fx:id="PasswordField" layoutX="169.0" layoutY="102.0" />
+         <Text fx:id="usernameText" layoutX="32.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:" textAlignment="RIGHT" wrappingWidth="132.892578125" />
+         <Text fx:id="passwordText" layoutX="33.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" textAlignment="RIGHT" wrappingWidth="132.892578125" />
+         <Text fx:id="locationText" layoutX="14.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location:" textAlignment="RIGHT" wrappingWidth="78.724609375" />
+         <Label fx:id="LocationField" layoutX="96.0" layoutY="15.0" prefHeight="17.0" prefWidth="150.0" text="USA" />
+         <Label fx:id="LanguageField" layoutX="99.0" layoutY="180.0" prefHeight="17.0" prefWidth="67.0" text="English" />
+         <Text fx:id="languageText" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Language:" textAlignment="RIGHT" wrappingWidth="92.451171875" />
       </children></AnchorPane>
 </Pane>

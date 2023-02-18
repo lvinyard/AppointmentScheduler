@@ -1,17 +1,24 @@
 package vinyard.appointmentscheduler;
 
+import helper.AppointmentsQuery;
+import helper.ContactsQuery;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import model.Appointments;
+import model.Contacts;
 import model.Customers;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ModifyAppointmentController {
+public class ModifyAppointmentController implements Initializable {
     public DatePicker EndDate;
     public DatePicker StartDate;
     public TextField CustomerIdField;
@@ -24,8 +31,10 @@ public class ModifyAppointmentController {
     public TextField TypeField;
     public ComboBox StartTime;
     public ComboBox ContactIdField;
-
     private static Appointments modifyAppointment = null;
+
+    public ModifyAppointmentController() throws Exception {
+    }
 
     public static void getModifyAppointment(Appointments appointment){
         modifyAppointment = appointment;
@@ -51,5 +60,25 @@ public class ModifyAppointmentController {
         stage.setTitle("Modify Product Form");
         stage.setScene(scene);
         stage.show();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        //Load modify appointment into form
+        AppointmentIdField.setText(String.valueOf(modifyAppointment.getAppointment_Id()));
+        TitleField.setText(modifyAppointment.getTitle());
+        DescField.setText(modifyAppointment.getDescription());
+        LocationField.setText(modifyAppointment.getLocation());
+        try {
+            ContactIdField.getItems().addAll(ContactsQuery.getAllContactIds());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        TypeField.setText(modifyAppointment.getType());
+
+        AppointmentsQuery.UTCtoLocalTime(modifyAppointment.getStart());
+
+
+
     }
 }

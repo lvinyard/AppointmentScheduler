@@ -5,7 +5,7 @@ public class Contacts {
     private String Contact_Name;
     private String Email;
 
-    public void Contacts(int contact_Id, String contact_Name, String email){
+    public Contacts(int contact_Id, String contact_Name, String email){
         this.Contact_Id = contact_Id;
         this.Contact_Name = contact_Name;
         this.Email = email;
