@@ -20,6 +20,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.jar.Attributes;
 
+/**
+ * This class handles the controls and logic of the Modify Customer scene.
+ */
 public class ModifyCustomerController implements Initializable {
     public TextField CustomerIdField;
     public TextField NameField;
@@ -28,25 +31,39 @@ public class ModifyCustomerController implements Initializable {
     public TextField PhoneNumberField;
     public ComboBox DivisionField;
     public ComboBox CountryField;
-    @FXML
-    private Label welcomeText;
     private static Customers modifyCustomer = null;
 
+    /**
+     * This method is called to pass the modified customer from main scene to this scene
+     * @param customer
+     */
     public static void getModifyCustomer(Customers customer){
         modifyCustomer = customer;
     }
 
+    /**
+     * This method is called when the Cancel button is pressed.
+     * Scene changed back to main screen.
+     * @param actionEvent
+     * @throws IOException
+     */
     public void CancelButton(ActionEvent actionEvent) throws IOException {
 
         //Change Scene to Main Screen
         Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/vinyard/appointmentscheduler/AS_MainScreen.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1075, 617);
-        stage.setTitle("Modify Product Form");
+        stage.setTitle("Appointment Scheduler");
         stage.setScene(scene);
         stage.show();
     }
 
+    /**
+     * This method is called when the Save Button is pressed.
+     * The modified Customer is updated in the database.
+     * @param actionEvent
+     * @throws Exception
+     */
     public void SaveButton(ActionEvent actionEvent) throws Exception {
 
         if(DivisionField.getSelectionModel().getSelectedItem() == null){
@@ -71,7 +88,7 @@ public class ModifyCustomerController implements Initializable {
                 Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/vinyard/appointmentscheduler/AS_MainScreen.fxml"));
                 Scene scene = new Scene(fxmlLoader.load(), 1075, 617);
-                stage.setTitle("Modify Product Form");
+                stage.setTitle("Appointment Scheduler");
                 stage.setScene(scene);
                 stage.show();
 
@@ -85,6 +102,17 @@ public class ModifyCustomerController implements Initializable {
 
     }
 
+    /**
+     * This method is called on init of the scene.
+     * Loads all the modified customer details into the form.
+     *
+     * LAMBDA on Line 133
+     * The justification for this Lambda expression is that is simplifies the code where another method would be required.
+     * The Lambda expression takes in 3 parameters, and you are able to see the entire logic of the listener in the same
+     * code block as it is being utilized in.
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

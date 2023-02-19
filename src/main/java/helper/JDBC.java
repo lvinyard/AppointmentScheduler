@@ -2,6 +2,9 @@ package helper;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+/**
+ * This class handles the Database Connection
+ */
 public abstract class JDBC {
     private static final String protocol = "jdbc";
     private static final String vendor = ":mysql:";
@@ -13,6 +16,9 @@ public abstract class JDBC {
     private static String password = "Passw0rd!"; // Password
     public static Connection connection;  // Connection Interface
 
+    /**
+     * Opens the connection to the database
+     */
     public static void openConnection()
     {
         try {
@@ -26,6 +32,9 @@ public abstract class JDBC {
         }
     }
 
+    /**
+     * Closes the connection to the database
+     */
     public static void closeConnection() {
         try {
             connection.close();
@@ -36,6 +45,11 @@ public abstract class JDBC {
             System.out.println("Error:" + e.getMessage());
         }
     }
+
+    /**
+     * Connection
+     * @return
+     */
     public static Connection dbCursor() {
         return connection;
     }

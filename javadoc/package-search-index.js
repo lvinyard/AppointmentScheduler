@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"vinyard.appointmentscheduler","l":"helper"},{"m":"vinyard.appointmentscheduler","l":"model"},{"m":"vinyard.appointmentscheduler","l":"vinyard.appointmentscheduler"}];updateSearchResults();

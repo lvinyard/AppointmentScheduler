@@ -9,8 +9,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 
+/**
+ * This class is to deal with the SQL methods for the Division Model
+ */
 public abstract class DivisionQuery {
-
+    /**
+     * This method retrieves all Divisions in a provided Country Id
+     * @param CountryId
+     * @return
+     * @throws SQLException
+     * @throws Exception
+     */
     public static ObservableList<Divisions> getDivisions(int CountryId) throws SQLException, Exception{
         ObservableList<Divisions> allDivisions = FXCollections.observableArrayList();
         String sqlStatement = "SELECT * from first_level_divisions where Country_ID = '" + CountryId + "'";
@@ -30,6 +39,14 @@ public abstract class DivisionQuery {
         }
         return allDivisions;
     }
+
+    /**
+     * This method retrieves all Divisions names in a provided Country Id
+     * @param CountryId
+     * @return
+     * @throws SQLException
+     * @throws Exception
+     */
     public static ObservableList<String> getDivisionsNames(int CountryId) throws SQLException, Exception{
         ObservableList<String> allDivisionsNames = FXCollections.observableArrayList();
         String sqlStatement = "SELECT Division from first_level_divisions where Country_ID = '" + CountryId + "'";
@@ -43,6 +60,13 @@ public abstract class DivisionQuery {
         return allDivisionsNames;
     }
 
+    /**
+     * This method returns the division name from a division id
+     * @param division_ID
+     * @return
+     * @throws SQLException
+     * @throws Exception
+     */
     public static String getDivisionName(int division_ID) throws SQLException, Exception{
 
         String sqlStatement = "SELECT Division from first_level_divisions where Division_ID = '" + division_ID + "'";
@@ -53,6 +77,14 @@ public abstract class DivisionQuery {
         result.next();
         return result.getString("Division");
     }
+
+    /**
+     * This method returns the Division Id for a provided division Name
+     * @param division_Name
+     * @return
+     * @throws SQLException
+     * @throws Exception
+     */
     public static int getDivisionId(String division_Name) throws SQLException, Exception{
 
         String sqlStatement = "SELECT Division_ID from first_level_divisions where Division = '" + division_Name + "'";

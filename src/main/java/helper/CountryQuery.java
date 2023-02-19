@@ -10,8 +10,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 
+/**
+ * This class deals with all of the SQL queries for the Country Model
+ */
 public class CountryQuery {
-
+    /**
+     * This method retrieves all countries from the database
+     * @return
+     * @throws SQLException
+     * @throws Exception
+     */
     public static ObservableList<Countries> getAllCountries() throws SQLException, Exception{
         ObservableList<Countries> allCountries = FXCollections.observableArrayList();
         String sqlStatement = "SELECT * from Countries";
@@ -30,6 +38,13 @@ public class CountryQuery {
         }
         return allCountries;
     }
+
+    /**
+     * This Method retrives all of the countries names in the database
+     * @return
+     * @throws SQLException
+     * @throws Exception
+     */
     public static ObservableList<String> getAllCountriesName() throws SQLException, Exception{
         ObservableList<String> allCountriesNames = FXCollections.observableArrayList();
         String sqlStatement = "SELECT * from Countries";
@@ -43,6 +58,13 @@ public class CountryQuery {
         return allCountriesNames;
     }
 
+    /**
+     * This method returns a single CountryId by the provided divisionId
+     * @param division_ID
+     * @return
+     * @throws SQLException
+     * @throws Exception
+     */
     public static int findCountryId(int division_ID) throws SQLException, Exception{
 
         String sqlStatement = "SELECT Country_ID from first_level_divisions where Division_ID = '" + division_ID + "'";
@@ -53,6 +75,14 @@ public class CountryQuery {
         result.next();
         return result.getInt("Country_ID");
     }
+
+    /**
+     * This method returns the country id by the provided country name
+     * @param countryName
+     * @return
+     * @throws SQLException
+     * @throws Exception
+     */
     public static int findCountryId(String countryName) throws SQLException, Exception{
 
         String sqlStatement = "SELECT Country_ID from countries where Country = '" + countryName + "'";
@@ -64,6 +94,13 @@ public class CountryQuery {
         return result.getInt("Country_ID");
     }
 
+    /**
+     * This method returns the country name by the provided country id
+     * @param Country_ID
+     * @return
+     * @throws SQLException
+     * @throws Exception
+     */
     public static String findCountryName(int Country_ID) throws SQLException, Exception{
 
         String sqlStatement = "SELECT Country from countries where Country_ID = '" + Country_ID + "'";

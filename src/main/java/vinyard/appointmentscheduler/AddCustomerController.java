@@ -20,6 +20,9 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+/**
+ * This class handles the login in the Add Customer Screen
+ */
 public class AddCustomerController implements Initializable {
     public TextField CustomerIdField;
     public TextField NameField;
@@ -28,21 +31,28 @@ public class AddCustomerController implements Initializable {
     public TextField PhoneNumberField;
     public ComboBox DivisionField;
     public ComboBox CountryField;
-    @FXML
-    private Label welcomeText;
 
-
+    /**
+     * This method is invoked when the Cancel Button is pressed. Takes user back to main screen.
+     * @param actionEvent
+     * @throws IOException
+     */
     public void CancelButton(ActionEvent actionEvent) throws IOException {
 
         //Change Scene to Main Screen
         Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/vinyard/appointmentscheduler/AS_MainScreen.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1075, 617);
-        stage.setTitle("Modify Product Form");
+        stage.setTitle("Appointment Scheduler");
         stage.setScene(scene);
         stage.show();
     }
 
+    /**
+     * This method is invoked when the Save Button is pressed. Saves Customer to the database.
+     * @param actionEvent
+     * @throws Exception
+     */
     public void SaveButton(ActionEvent actionEvent) throws Exception {
 
         if(DivisionField.getSelectionModel().getSelectedItem() == null){
@@ -67,7 +77,7 @@ public class AddCustomerController implements Initializable {
                 Stage stage = (Stage) ((Button) actionEvent.getSource()).getScene().getWindow();
                 FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/vinyard/appointmentscheduler/AS_MainScreen.fxml"));
                 Scene scene = new Scene(fxmlLoader.load(), 1075, 617);
-                stage.setTitle("Modify Product Form");
+                stage.setTitle("Appointment Scheduler");
                 stage.setScene(scene);
                 stage.show();
 
@@ -81,6 +91,11 @@ public class AddCustomerController implements Initializable {
 
     }
 
+    /**
+     * This method is called on init of this scene. This loads all data into the form.
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {

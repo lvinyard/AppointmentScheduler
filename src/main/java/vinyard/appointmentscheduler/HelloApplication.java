@@ -10,10 +10,13 @@ import java.io.IOException;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+/**
+ * Main
+ */
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        Locale.setDefault(new Locale("fr", "FR"));
+        //Locale.setDefault(new Locale("fr", "FR"));
         ResourceBundle rb = ResourceBundle.getBundle("Language_files/rb");
         System.out.println("You're language is set to " + Locale.getDefault());
 
@@ -26,6 +29,10 @@ public class HelloApplication extends Application {
         stage.show();
     }
 
+    /**
+     * Start of app
+     * @param args
+     */
     public static void main(String[] args) {
         JDBC.openConnection();
         launch();

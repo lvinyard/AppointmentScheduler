@@ -8,9 +8,17 @@ import model.Users;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * This class handles all SQL methods dealing with the Contact model
+ */
 public class ContactsQuery {
 
-
+    /**
+     * This method retrieves all contacts from the database
+     * @return
+     * @throws SQLException
+     * @throws Exception
+     */
     public static ObservableList<Contacts> getAllContacts() throws SQLException, Exception{
         ObservableList<Contacts> allContacts = FXCollections.observableArrayList();
         String sqlStatement = "SELECT * FROM contacts";
@@ -26,17 +34,27 @@ public class ContactsQuery {
         }
         return allContacts;
     }
-    public static ObservableList<String> getAllContactIds() throws SQLException, Exception{
-        ObservableList<String> allContactIds = FXCollections.observableArrayList();
-        String sqlStatement = "SELECT Contact_ID FROM contacts";
+
+    /**
+     * This method retrieves a single Contact based on the provided Contact Id
+     * @param Contact_Id
+     * @return
+     * @throws SQLException
+     * @throws Exception
+     */
+    public static Contacts getContact(int Contact_Id) throws SQLException, Exception{
+
+        String sqlStatement = "SELECT * FROM contacts where Contact_ID = '" + Contact_Id + "'";
         Query.makeQuery(sqlStatement);
         ResultSet result = Query.getResult();
 
-        while(result.next()){
-            String resContactId = result.getString("Contact_ID");
-            allContactIds.add(resContactId);
-        }
-        return allContactIds;
+        result.next();
+        int resContactId = result.getInt("Contact_ID");
+        String resContactName = result.getString("Contact_Name");
+        String resEmail = result.getString("Email");
+        Contacts ContactResult = new Contacts(resContactId ,resContactName, resEmail);
+
+        return ContactResult;
     }
 
 }

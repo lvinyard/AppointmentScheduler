@@ -7,4 +7,5 @@ module vinyard.appointmentscheduler {
     opens vinyard.appointmentscheduler to javafx.fxml;
     exports vinyard.appointmentscheduler;
     exports model;
+    exports helper;
 }
