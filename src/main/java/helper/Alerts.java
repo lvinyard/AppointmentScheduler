@@ -7,7 +7,7 @@ import javafx.scene.control.ButtonType;
 import model.Appointments;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * This helper class is responsible for the various alerts and
@@ -59,19 +59,32 @@ public class Alerts {
     }
 
     /**
-     * This method handles user confirmation
+     * This method handles user confirmation.
+     *
+     * LAMBDA -
+     * This method features the use of a lambda. The lamdba
+     * in this function provides a cleaner function by reducing the lines of code.
+     * This not only saving time writing but is easier for others to understand as all the code is  in front of them.
+     * Without this Lamdba I would need an additional function to handle to response.
+     *
      * @param error
      * @return
      */
-    public static boolean ConfirmationLog(String error){
+    public static boolean ConfirmationLog(String error) {
+        AtomicBoolean result = new AtomicBoolean(false);
         Alert confirmationLog = new Alert(Alert.AlertType.CONFIRMATION);
         confirmationLog.setContentText(error);
-        Optional<ButtonType> result = confirmationLog.showAndWait();
-        if(result.isPresent() && result.get() == ButtonType.OK) {
-            return true;
-        }else{
-            return false;
-        }
+
+        confirmationLog.showAndWait().ifPresent((response -> {
+            if(response == ButtonType.OK){
+
+                result.set(true);
+            }else{
+                result.set(false);
+            }
+
+        }));
+        return result.get();
     }
 
 }

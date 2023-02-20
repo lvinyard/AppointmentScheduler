@@ -238,23 +238,27 @@ public class MainScreenController implements Initializable {
         if (deleteAppointment != null) {
 
             AppointmentsQuery.deleteAppointment(deleteAppointment.getAppointment_Id());
+            if(Alerts.ConfirmationLog("Are you sure you want to delete this appointment?")){
 
-            Alerts.alertLog("Appointment ID: " + deleteAppointment.getAppointment_Id() + " with Type " + deleteAppointment.getType() + " has been deleted.");
+                Alerts.alertLog("Appointment ID: " + deleteAppointment.getAppointment_Id() + " with Type " + deleteAppointment.getType() + " has been deleted.");
 
-            RadioAll.setSelected(true);
+                RadioAll.setSelected(true);
 
-            AppointmentTable.setItems(helper.AppointmentsQuery.getAllAppointments("All"));
+                AppointmentTable.setItems(helper.AppointmentsQuery.getAllAppointments("All"));
 
-            ColumnAppId.setCellValueFactory(new PropertyValueFactory<>("Appointment_Id"));
-            ColumnTitle.setCellValueFactory(new PropertyValueFactory<>("Title"));
-            ColumnDesc.setCellValueFactory(new PropertyValueFactory<>("Description"));
-            ColumnLocation.setCellValueFactory(new PropertyValueFactory<>("Location"));
-            ColumnContact.setCellValueFactory(new PropertyValueFactory<>("Contact_id"));
-            ColumnType.setCellValueFactory(new PropertyValueFactory<>("Type"));
-            ColumnStart.setCellValueFactory(new PropertyValueFactory<>("Start"));
-            ColumnEnd.setCellValueFactory(new PropertyValueFactory<>("End"));
-            ColumnCustomerId.setCellValueFactory(new PropertyValueFactory<>("Customer_Id"));
-            ColumnUserId.setCellValueFactory(new PropertyValueFactory<>("User_Id"));
+                ColumnAppId.setCellValueFactory(new PropertyValueFactory<>("Appointment_Id"));
+                ColumnTitle.setCellValueFactory(new PropertyValueFactory<>("Title"));
+                ColumnDesc.setCellValueFactory(new PropertyValueFactory<>("Description"));
+                ColumnLocation.setCellValueFactory(new PropertyValueFactory<>("Location"));
+                ColumnContact.setCellValueFactory(new PropertyValueFactory<>("Contact_id"));
+                ColumnType.setCellValueFactory(new PropertyValueFactory<>("Type"));
+                ColumnStart.setCellValueFactory(new PropertyValueFactory<>("Start"));
+                ColumnEnd.setCellValueFactory(new PropertyValueFactory<>("End"));
+                ColumnCustomerId.setCellValueFactory(new PropertyValueFactory<>("Customer_Id"));
+                ColumnUserId.setCellValueFactory(new PropertyValueFactory<>("User_Id"));
+
+            }
+
 
         } else {
             helper.Alerts.errorLog("No Appointment is selected");

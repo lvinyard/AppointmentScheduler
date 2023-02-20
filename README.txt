@@ -22,6 +22,7 @@ The additional report I added as part of A3f is a simple table that groups custo
 
 ##LAMBDA
 The Lambda expressions are commented in the java docs. You will find them in ReportingController.java and ModifyCustomer.java
+**Revised 2/20/23: Added an additional Lamdba function that is different than the above two. This new function can be found in the helper.Alerts.java file. Javadocs have been updated.
 
 ##How to Run application
 1. Extract folder from Zip file
